@@ -1,0 +1,5 @@
+Ragex para borrar letras:
+string.replaceAll("[a-zA-Z]", "");
+
+Ragex para borrar simbolos (!@#$%^&*()...)
+string.replaceAll("[\\W]|_", ""); 
