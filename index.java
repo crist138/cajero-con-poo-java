@@ -12,15 +12,14 @@ Scanner in = new Scanner(System.in);
 	int i;
 	boolean flag = false;
 
+	int ArrLength = cajero.cards.length; // Asignamos el tamanio del array a esta variable
+
 	System.out.println("BIENVENIDO AL BANCO PRIVADO NOSE");
 
 while(!flag){
 	System.out.println("INGRESA TU TARJETA");
 	tarjeta = in.next(); // guardanos la "tarjeta"
 
-
-	int ArrLength = cajero.cards.length;
-	
 	tarjeta = tarjeta.replaceAll("[a-zA-Z]", ""); // Eliminamos las letras, si es que puso
 	tarjeta = tarjeta.replaceAll("[\\W]|_", ""); // al igul los simbolos si es que puso
 
@@ -29,9 +28,10 @@ while(!flag){
 		if(tarjeta.equals(cajero.cards[i])){
 			System.out.println("Bienvenido!");
 			flag = true;
-			
+			cajero.menuPrincipal();
 		}
 	} 
+
 	if(!flag)
 	System.out.println("TU TARJETA NO COINCIDE CON NINGUNA REGISTRADA EN EL BANCO, INTENTALO DE NUEVO\n");
 }
